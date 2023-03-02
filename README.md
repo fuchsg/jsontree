@@ -18,7 +18,7 @@ or
 ```
 jsontree <(gcloud compute instances describe <instance> --format=json)
 ```
-or, if you are daring (the file is huge)
+or, if you are daring (the file is huge, so it takes a while to load)
 ```
 jsontree <(curl -sL https://github.com/fuchsg/geojson/raw/main/worldCountries-hires-10m.geojson)
 ```
