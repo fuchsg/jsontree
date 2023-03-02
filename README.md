@@ -11,7 +11,7 @@ To us it just download it and run it like:
 jsontree <filename>
 ```
 
-Via process substitution it is also possible to use ephimeral data like:
+Via [process substitution](https://tldp.org/LDP/abs/html/process-sub.html) it is also possible to use ephimeral data like:
 
 ```
 jsontree <(docker inspect <dockerid>)
