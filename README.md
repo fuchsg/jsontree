@@ -5,6 +5,8 @@ A JSON tree explorer for the command line based on Python Textual
 
 While exploring possibilities to move a couple of existing TUI applications based on Whiptail and also looking for a more modern look and feel I came accross the great [Textual](https://github.com/Textualize/textual) project. To familiarize myself with the concepts of that framework I took the liberty to grab one of the examples ("Tree widget") and created this little script out of it.
 
+## Usage
+
 To us it just download it and run it like:
 
 ```
@@ -24,3 +26,11 @@ or, if you are daring (the file is huge, so it takes a while to load)
 ```
 jsontree <(curl -sL https://github.com/fuchsg/geojson/raw/main/worldCountries-hires-10m.geojson)
 ```
+
+## Installation
+
+To install it make sure you have installed Python Textual:
+```
+pip3 install textual
+```
+Then copy the script to any location and run it from there.
