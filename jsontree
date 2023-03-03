@@ -16,7 +16,7 @@ from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, Tree
 from textual.widgets.tree import TreeNode
 
-class TreeApp(App):
+class JSONTree(App):
 
     BINDINGS = [
         ("t", "toggle_tree", "Toggle tree"),
@@ -108,5 +108,5 @@ class TreeApp(App):
         exit()
 
 if __name__ == "__main__":
-    app = TreeApp()
+    app = JSONTree()
     app.run()
