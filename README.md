@@ -19,6 +19,7 @@ Via [process substitution](https://www.gnu.org/software/bash/manual/html_node/Pr
 ```
 jsontree <(curl -s 'ipinfo.io')
 
+
 ```
 Other use case examples are:
 ```
