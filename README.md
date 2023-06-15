@@ -18,6 +18,7 @@ curl -s 'ipinfo.io' | jsontree
 Via [process substitution](https://www.gnu.org/software/bash/manual/html_node/Process-Substitution.html) it is also possible to use ephimeral data like:
 ```
 jsontree <(curl -s 'ipinfo.io')
+
 ```
 Other use case examples are:
 ```
