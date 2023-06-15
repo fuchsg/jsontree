@@ -29,7 +29,7 @@ class JSONTree(App):
         yield Tree("Root")
 
     @classmethod
-    def add_json(cls, node: TreeNode, json_data: object) -> None:
+    def add_json(self, node: TreeNode, json_data: object) -> None:
         """Adds JSON data to a node.
 
         Args:
@@ -51,7 +51,7 @@ class JSONTree(App):
             """
             if isinstance(data, dict):
                 node._label = Text(f"{{}} {name}")
-                for key, value in data.items():
+                for key, value in sorted(data.items()):
                     new_node = node.add("")
                     add_node(key, new_node, value)
             elif isinstance(data, list):
