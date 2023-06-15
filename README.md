@@ -7,10 +7,16 @@ While exploring possibilities to move a couple of existing TUI applications base
 
 ## Usage
 
-To us it just download it and run it like:
+To use it just download it and run it like:
 
 ```
 jsontree <filename>
+```
+
+You can also read from STDIN:
+
+```
+curl -s 'ipinfo.io' | jsontree
 ```
 
 Via [process substitution](https://www.gnu.org/software/bash/manual/html_node/Process-Substitution.html) it is also possible to use ephimeral data like:
