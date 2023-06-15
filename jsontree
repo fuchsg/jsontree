@@ -2,9 +2,12 @@
 
 # Requires: pip3 install textual
 
+import os
+import sys
+
 import argparse
 parser = argparse.ArgumentParser(description="JSON data structure explorer.")
-parser.add_argument("filename")
+parser.add_argument("filename", nargs="?")
 args = parser.parse_args()
 
 import json
@@ -72,13 +75,6 @@ class JSONTree(App):
         add_node(args.filename, node, json_data)
 
     def on_mount(self) -> None:
-        # Load JSON when the app starts.
-        if (args.filename):
-          with open(args.filename) as data_file:
-            self.json_data = json.load(data_file)
-        else:
-            self.json_data = json_data
-
         tree = self.query_one(Tree)
         self.set_focus(tree)
         tree.show_root = not tree.show_root
@@ -108,5 +104,13 @@ class JSONTree(App):
         exit()
 
 if __name__ == "__main__":
-    app = JSONTree()
-    app.run()
+  if (args.filename):
+    with open(args.filename) as data_file:
+      json_data = json.load(data_file)
+  else:
+    json_data = json.loads(sys.stdin.read())
+    sys.stdin = open(os.ttyname(sys.stdout.fileno()), 'r')
+
+  app = JSONTree()
+  app.json_data = json_data
+  app.run()
